@@ -16,8 +16,8 @@ class FavoriteCtl(BaseCtl):
         pk = int(self.form['id'])
         if pk > 0:
             obj.id = pk
-            obj.product = self.form['product']
-            obj.addedDate = self.form['addedDate']
+        obj.product = self.form['product']
+        obj.addedDate = self.form['addedDate']
         return obj
 
     def model_to_form(self, obj):

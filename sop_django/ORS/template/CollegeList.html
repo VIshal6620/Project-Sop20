@@ -90,7 +90,7 @@
                         {% for e in pageList  %}
                             <tr>
                                 <td><input type="checkbox" name="ids" class="checkbox"
-                                            onchange="selectone(this)" value="{{ e.id }}"
+                                            onchange="selectone(this)" value="{{ e.id }}">
                                 </td>
                                 <td>{{ form.index|add:forloop.counter0 }}</td>
                                 <td>{{ e.collegeName }}</td>

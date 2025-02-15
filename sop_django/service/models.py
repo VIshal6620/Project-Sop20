@@ -449,7 +449,7 @@ class TimeTable(models.Model):
 
 class Favorite(models.Model):
     product = models.CharField(max_length=50)
-    addedDate = models.DateField(max_length=15)
+    addedDate = models.DateField()
 
     def to_json(self):
         data = {
