@@ -70,7 +70,6 @@ class FavoriteListCtl(BaseCtl):
 
                         self.form['error'] = False
                         self.form['messege'] = "DATA HAS BEEN DELETED SUCCESSFULLY"
-                        print('ppppppppp------->', self.page_list)
                         res = render(request, self.get_template(), {'pageList': self.page_list, 'form': self.form})
                     else:
                         self.form['error'] = True

@@ -461,3 +461,13 @@ class Favorite(models.Model):
 
     class Meta:
         db_table = 'sos_favorite'
+
+
+class Staff(models.Model):
+    fullName = models.CharField(max_length=30)
+    joiningDate = models.DateField(max_length=15)
+    division = models.CharField(max_length=30)
+    previousEmployer = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'sos_Staff'

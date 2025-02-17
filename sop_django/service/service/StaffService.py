@@ -1,25 +1,25 @@
-from service.models import Favorite
-from service.utility.DataValidator import DataValidator
-from .BaseService import BaseService
 from django.db import connection
+from ORS.utility.DataValidator import DataValidator
+from service.models import Staff
+from service.service.BaseService import BaseService
 
 
-class FavoriteService(BaseService):
+class StaffService(BaseService):
 
     def search(self, params):
         print('Page No -->', params['pageNo'])
         pageNo = (params['pageNo'] - 1) * self.pageSize
-        sql = 'select * from sos_favorite where 1=1'
-        val = params.get('product', None)
+        sql = 'select * from sos_Staff where 1=1'
+        val = params.get('fullName', None)
         if (DataValidator.isNotNull(val)):
-            sql += " and product = '" + val + "' "
+            sql += " and fullName = '" + val + "' "
         sql += " limit %s,%s"
         cursor = connection.cursor()
         print("------------>", sql, pageNo, self.pageSize)
         params['index'] = ((params['pageNo'] - 1) * self.pageSize) + 1
         cursor.execute(sql, [pageNo, self.pageSize])
         result = cursor.fetchall()
-        columnName = ('id', 'product', 'addedDate')
+        columnName = ('id', 'fullName', 'joiningDate', "division", "previousEmployer")
         res = {
             "data": [],
             "MaxId": 1,
@@ -33,4 +33,4 @@ class FavoriteService(BaseService):
         return res
 
     def get_model(self):
-        return Favorite
+        return Staff

@@ -35,7 +35,8 @@ from .ctl.ForgetPasswordCtl import ForgetPasswordCtl
 from .ctl.MyProfileCtl import MyProfileCtl
 from .ctl.FavoriteCtl import FavoriteCtl
 from .ctl.FavoriteListCtl import FavoriteListCtl
-
+from .ctl.StaffCtl import StaffCtl
+from .ctl.StaffListCtl import StaffListCtl
 # Create your views here.
 
 @csrf_exempt
