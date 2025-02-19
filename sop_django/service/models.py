@@ -471,3 +471,13 @@ class Staff(models.Model):
 
     class Meta:
         db_table = 'sos_Staff'
+
+
+class Position(models.Model):
+    designation = models.CharField(max_length=50)
+    openingDate = models.DateField(max_length=15)
+    requiredExperience = models.CharField(max_length=30)
+    condition = models.CharField(max_length=30)
+
+    class Meta:
+        db_table = 'sos_Position'

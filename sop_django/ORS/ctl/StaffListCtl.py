@@ -4,38 +4,36 @@ from service.service.StaffService import StaffService
 
 
 class StaffListCtl(BaseCtl):
-    count=1
+    count = 1
 
-    def request_to_form(self,requestForm):
-        self.form['fullName']=requestForm.get('fullName',None)
-        self.form['joiningDate']=requestForm.get('joiningDate',None)
-        self.form['division']=requestForm.get('division',None)
-        self.form['previousEmployer']=requestForm.get('previousEmployer',None)
-        self.form['ids']=requestForm.getlist('ids',None)
+    def request_to_form(self, requestForm):
+        self.form['fullName'] = requestForm.get('fullName', None)
+        self.form['joiningDate'] = requestForm.get('joiningDate', None)
+        self.form['division'] = requestForm.get('division', None)
+        self.form['previousEmployer'] = requestForm.get('previousEmployer', None)
+        self.form['ids'] = requestForm.getlist('ids', None)
 
-
-    def display(self,request,params={}):
-        StaffListCtl.count=self.form['pageNo']
-        record=self.get_service().search(self.form)
-        self.page_list=record['data']
-        res=render(request,self.get_template(),{'pageList':self.page_list,'form': self.form})
+    def display(self, request, params={}):
+        StaffListCtl.count = self.form['pageNo']
+        record = self.get_service().search(self.form)
+        self.page_list = record['data']
+        res = render(request, self.get_template(), {'pageList': self.page_list, 'form': self.form})
         return res
 
-    def next(self,request,params={}):
+    def next(self, request, params={}):
         StaffListCtl.count += 1
-        self.form['pageNo']=StaffListCtl.count
-        record=self.get_service().search(self.form)
-        self.page_list =record['data']
-        res = render(request,self.get_template(),{'pageList': self.page_list,'form': self.form})
+        self.form['pageNo'] = StaffListCtl.count
+        record = self.get_service().search(self.form)
+        self.page_list = record['data']
+        res = render(request, self.get_template(), {'pageList': self.page_list, 'form': self.form})
         return res
 
-
-    def previous(self,request,params={}):
+    def previous(self, request, params={}):
         StaffListCtl.count -= 1
-        self.form['pageNo']=StaffListCtl.count
-        record=self.get_service().search(self.form)
-        self.page_list=record['data']
-        res = render(request,self.get_template(),{'pageList': self.page_list, 'form': self.form})
+        self.form['pageNo'] = StaffListCtl.count
+        record = self.get_service().search(self.form)
+        self.page_list = record['data']
+        res = render(request, self.get_template(), {'pageList': self.page_list, 'form': self.form})
         return res
 
     def new(self, request, params={}):
@@ -68,12 +66,10 @@ class StaffListCtl(BaseCtl):
             self.form['pageNo'] = 1
             records = self.get_service().search(self.form)
             self.page_list = records['data']
-            return render(request, self.get_template(), {'pageList': self.page_list, 'form': self.form})
+        return render(request, self.get_template(), {'pageList': self.page_list, 'form': self.form})
 
     def get_service(self):
         return StaffService()
 
     def get_template(self):
         return "StaffList.html"
-
-

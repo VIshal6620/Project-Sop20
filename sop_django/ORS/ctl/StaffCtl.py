@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from ORS.utility.DataValidator import DataValidator
 from .BaseCtl import BaseCtl
-from service.models import  Staff
+from service.models import Staff
 from service.service.StaffService import StaffService
 
-class StaffCtl(BaseCtl):
 
+class StaffCtl(BaseCtl):
 
     def request_to_form(self, requestForm):
         self.form['id'] = requestForm['id']
@@ -15,7 +15,7 @@ class StaffCtl(BaseCtl):
         self.form['previousEmployer'] = requestForm['previousEmployer']
 
     def model_to_form(self, obj):
-        if (obj==None):
+        if (obj == None):
             return
         self.form['id'] = obj.id
         self.form['fullName'] = obj.fullName
@@ -48,9 +48,9 @@ class StaffCtl(BaseCtl):
             inputError['joiningDate'] = "Date can not be null"
             self.form['error'] = True
         else:
-            if(DataValidator.isDate(self.form['joiningDate'])):
-                inputError['joiningDate']="enter correct date"
-                self.form['error']=True
+            if (DataValidator.isDate(self.form['joiningDate'])):
+                inputError['joiningDate'] = "enter correct date"
+                self.form['error'] = True
 
         if (DataValidator.isNull(self.form['division'])):
             inputError['division'] = "division can not be null"

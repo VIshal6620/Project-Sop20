@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-
 from django.contrib.sessions.models import Session
 
 
@@ -17,9 +16,7 @@ from .ctl.CourseListCtl import CourseListCtl
 from .ctl.MarksheetCtl import MarksheetCtl
 from .ctl.MarksheetListCtl import MarksheetListCtl
 from .ctl.MarksheetMeritListCtl import MarksheetMeritListCtl
-
 from .ctl.RoleCtl import RoleCtl
-# from .ctl.RoleListCtl import RoleListCtl
 from .ctl.RoleList import RoleListCtl
 from .ctl.StudentCtl import StudentCtl
 from .ctl.StudentListCtl import StudentListCtl
@@ -37,6 +34,9 @@ from .ctl.FavoriteCtl import FavoriteCtl
 from .ctl.FavoriteListCtl import FavoriteListCtl
 from .ctl.StaffCtl import StaffCtl
 from .ctl.StaffListCtl import StaffListCtl
+from .ctl.PositionCtl import PositionCtl
+
+
 # Create your views here.
 
 @csrf_exempt
