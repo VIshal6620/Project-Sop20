@@ -6,6 +6,7 @@ from service.service.PositionService import PositionService
 
 
 class PositionCtl(BaseCtl):
+
     def request_to_form(self, requestForm):
         self.form['id'] = requestForm['id']
         self.form['designation'] = requestForm['designation']
@@ -25,8 +26,7 @@ class PositionCtl(BaseCtl):
 
     def model_to_form(self, obj):
         if obj is None:
-            return
-
+            return obj
         self.form['id'] = obj.id
         self.form['designation'] = obj.designation
         self.form['openingDate'] = obj.openingDate
@@ -36,6 +36,7 @@ class PositionCtl(BaseCtl):
     def input_validation(self):
         super().input_validation()
         inputError = self.form['inputError']
+
         if (DataValidator.isNull(self.form['designation'])):
             inputError['designation'] = "Designation is Required"
             self.form['error'] = True
@@ -88,4 +89,4 @@ class PositionCtl(BaseCtl):
         return "Position.html"
 
     def get_service(self):
-        return PositionService
+        return PositionService()
