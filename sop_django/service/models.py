@@ -6,6 +6,12 @@ class Role(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
 
+    def get_key(self):
+        return str(self.id)
+
+    def get_value(self):
+        return self.name
+
     def to_json(self):
         data = {
             'id': self.id,
@@ -30,6 +36,12 @@ class User(models.Model):
     mobilenumber = models.CharField(max_length=50, default='')
     role_Id = models.IntegerField()
     role_Name = models.CharField(max_length=50)
+
+    def get_key(self):
+        return self.id
+
+    def get_value(self):
+        return self.firstName + '' + self.lastName
 
     def to_json(self):
         data = {
@@ -60,6 +72,12 @@ class College(models.Model):
     collegeCity = models.CharField(max_length=20)
     collegePhoneNumber = models.CharField(max_length=20)
 
+    def get_key(self):
+        return str(self.id)
+
+    def get_value(self):
+        return self.collegeName
+
     def to_json(self):
         data = {
             'id': self.id,
@@ -85,6 +103,12 @@ class Course(models.Model):
     courseName = models.CharField(max_length=50)
     courseDescription = models.CharField(max_length=100)
     courseDuration = models.CharField(max_length=100)
+
+    def get_key(self):
+        return str(self.id)
+
+    def get_value(self):
+        return self.courseName
 
     def to_json(self):
         data = {
@@ -113,6 +137,12 @@ class Faculty(models.Model):
     subjectName = models.CharField(max_length=50)
     course_ID = models.IntegerField()
     courseName = models.CharField(max_length=50)
+
+    def get_key(self):
+        return str(self.id)
+
+    def get_value(self):
+        return self.name
 
     def to_json(self):
         data = {
@@ -168,6 +198,8 @@ class Student(models.Model):
     college_ID = models.IntegerField()
     collegeName = models.CharField(max_length=50)
 
+
+
     def to_json(self):
         data = {
             'id': self.id,
@@ -191,6 +223,12 @@ class Subject(models.Model):
 
     course_ID = models.IntegerField()
     courseName = models.CharField(max_length=50)
+
+    def get_key(self):
+        return (self.id)
+
+    def get_value(self):
+        return self.subjectName
 
     def to_json(self):
         data = {
@@ -429,6 +467,12 @@ class TimeTable(models.Model):
     course_ID = models.IntegerField()
     courseName = models.CharField(max_length=50)
     semester = models.CharField(max_length=50)
+
+    def get_key(self):
+        return (self.id)
+
+    def get_value(self):
+        return self.examTime
 
     def to_json(self):
         data = {

@@ -152,7 +152,7 @@ class RegistrationCtl(BaseCtl):
             e['password'] = self.form['password']
             emsg.subject = "ORS Registration Successful"
             mailResponse = EmailService.send(emsg, 'signUp', e)
-            if mailResponse == 1:
+            if mailResponse:
                 r = self.form_to_model(User())
                 self.get_service().save(r)
                 self.form['id'] = r.id

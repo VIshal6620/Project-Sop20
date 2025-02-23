@@ -3,9 +3,25 @@ from ORS.utility.DataValidator import DataValidator
 from .BaseCtl import BaseCtl
 from service.models import Staff
 from service.service.StaffService import StaffService
+from ..utility.HtmlUtility import HTMLUtility
 
 
 class StaffCtl(BaseCtl):
+
+    def preload(self, request, params):
+        self.form["division"] = request.POST.get('division', '')
+
+        if (params['id'] > 0):
+            obj = self.get_service().get(params['id'])
+            self.form["division"] = obj.division
+
+        self.static_preload = {"Marketing": "Marketing", "HR": "HR", "IT": "IT"}
+
+        self.form["preload"]["division"] = HTMLUtility.get_list_from_dict('division',
+        self.form['division'],
+        self.static_preload
+                     )
+
 
     def request_to_form(self, requestForm):
         self.form['id'] = requestForm['id']

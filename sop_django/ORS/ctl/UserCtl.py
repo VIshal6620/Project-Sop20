@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, redirect
 from ORS.utility.DataValidator import DataValidator
 from django.http import HttpResponse
@@ -6,11 +5,33 @@ from .BaseCtl import BaseCtl
 from service.models import User
 from service.service.UserService import UserService
 from service.service.RoleService import RoleService
+from ..utility.HtmlUtility import HTMLUtility
+
 
 class UserCtl(BaseCtl):
-    def preload(self, request):
-        self.page_list = RoleService().preload()
-        self.preloadData = self.page_list
+    def preload(self, request, params):
+
+        self.form["gender"] = request.POST.get('gender', '')
+        self.form["role_Id"] = request.POST.get('role_Id', 0)
+
+        if (params['id'] > 0):
+            obj = self.get_service().get(params['id'])
+            self.form["gender"] = obj.gender
+            self.form["role_Id"] = obj.role_Id
+
+        self.static_preload = {"Male": "Male", "Female": "Female"}
+        self.dynamic_preload = RoleService().preload()
+
+        self.form["preload"]["gender"] = HTMLUtility.get_list_from_dict(
+            'gender',
+            self.form["gender"],
+            self.static_preload
+        )
+        self.form["preload"]["role"] = HTMLUtility.get_list_from_objects(
+            'role_Id',
+            self.form["role_Id"],
+            self.dynamic_preload
+        )
 
     # Polulate Form from Http request
     def request_to_form(self, requestForm):
@@ -107,9 +128,11 @@ class UserCtl(BaseCtl):
         if (DataValidator.isNull(self.form['gender'])):
             inputError['gender'] = "Gender can not be null"
             self.form['error']  = True
+
         if (DataValidator.isNull(self.form["address"])):
             inputError["address"] = "Address can not be null"
             self.form["error"] = True
+
         if (DataValidator.isNull(self.form["mobilenumber"])):
             inputError["mobilenumber"] = "MobileNumber can not be null"
             self.form["error"] = True
@@ -117,12 +140,13 @@ class UserCtl(BaseCtl):
             if (DataValidator.ismobilecheck(self.form['mobilenumber'])):
                 inputError['mobilenumber'] = "Mobile No should start with 6,7,8,9"
                 self.form['error'] =  True
+
         if (DataValidator.isNull(self.form['role_Id'])):
             inputError['role_Id'] = "Role can not be null"
             self.form['error'] = True
-        else:
-            o = RoleService().find_by_unique_key(self.form['role_Id'])
-            self.form['role_Name'] = o.name
+        # else:
+        #     o = RoleService().find_by_unique_key(self.form['role_Id'])
+        #     self.form['role_Name'] = o.name
         return self.form['error']
 
         # Display User Page
@@ -130,7 +154,7 @@ class UserCtl(BaseCtl):
         if (params['id'] > 0):
             r = self.get_service().get(params['id'])
             self.model_to_form(r)
-        res = render(request, self.get_template(), {'form': self.form, 'roleList': self.preloadData})
+        res = render(request, self.get_template(), {'form': self.form})
         return res
 
         # Submit User Page
@@ -141,7 +165,7 @@ class UserCtl(BaseCtl):
             if dup.count() > 0:
                 self.form['error'] = True
                 self.form['messege'] = "Login Id already exists"
-                res = render(request, self.get_template(), {'form': self.form, 'roleList': self.preloadData})
+                res = render(request, self.get_template(), {'form': self.form})
             else:
                 r = self.form_to_model(User())
                 self.get_service().save(r)
@@ -149,13 +173,13 @@ class UserCtl(BaseCtl):
 
                 self.form['error'] = False
                 self.form['messege'] = "DATA HAS BEEN UPDATED SUCCESSFULLY"
-                res = render(request, self.get_template(), {'form': self.form, 'roleList': self.preloadData})
+                res = render(request, self.get_template(), {'form': self.form})
         else:
             duplicate = self.get_service().get_model().objects.filter(login_id=self.form['login_id'])
             if duplicate.count() > 0:
                 self.form['error'] = True
                 self.form['messege'] = "Login Id already exists"
-                res = render(request, self.get_template(), {'form': self.form, 'roleList': self.preloadData})
+                res = render(request, self.get_template(), {'form': self.form})
             else:
                 r = self.form_to_model(User())
                 self.get_service().save(r)
@@ -163,7 +187,7 @@ class UserCtl(BaseCtl):
 
                 self.form['error'] = False
                 self.form['messege'] = "DATA HAS BEEN SAVED SUCCESSFULLY"
-                res = render(request, self.get_template(), {'form': self.form, 'roleList': self.preloadData})
+                res = render(request, self.get_template(), {'form': self.form})
         return res
 
     def get_template(self):

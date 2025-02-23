@@ -7,8 +7,10 @@ Base class is inherited by all application controllers
 '''
 
 class BaseCtl(ABC):
-    # Contains preload data
-    preload_data = {}
+    #contains static and dynamic preload data
+    static_preload = {}
+    dynamic_preload = {}
+
 
     # Contains list of objects, it will be displayed at list page
     page_list = {}
@@ -24,13 +26,14 @@ class BaseCtl(ABC):
         self.form["error"] = False
         self.form["inputError"] = {}
         self.form["pageNo"] = 1
+        self.form["preload"] = {}
 
     '''
     It loads preload data of the page
     '''
 
-    def preload(self, request):
-        print("This is preload")
+    def preload(self, request,id):
+        pass
 
     '''
     execute method is executed for each HTTP request.
@@ -39,7 +42,7 @@ class BaseCtl(ABC):
 
     def execute(self, request, params={}):
         print("This is execute")
-        self.preload(request)
+        self.preload(request,params)
         if "GET" == request.method:
             return self.display(request, params)
         elif "POST" == request.method:
