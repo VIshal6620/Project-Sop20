@@ -44,13 +44,13 @@
 </head>
 
 <body style="background-color:whitesmoke;background-image:url('../../static/images/list_background.png');background-repeat: no-repeat;background-size: cover;width: 100%;">
-    <h1 align="center">Course List</h1>
+    <h1 align="center">Position List</h1>
 <form method="POST">
     <div class="container-fluid">
     <div class="form-group row">
         <div class="col-lg-5"></div>
         <div class="col-lg-2">
-            <input class="form-control" name="courseName" value="{{ form.courseName }}" placeholder="Enter Course name">
+            <input class="form-control" name="designation" value="{{ form.designation }}" placeholder="Enter designation name">
         </div>
 
         <div class="col-lg-2">
@@ -89,7 +89,7 @@
                         {% for e in pageList %}
                             <tr>
                                 <td><input type="checkbox" name="ids" class="checkbox"
-                                            onchange="selectone(this)" value="{{ e.id }}"
+                                            onchange="selectone(this)" value="{{ e.id }}">
                                 </td>
                                 <td>{{ form.index|add:forloop.counter0 }}</td>
                                 <td>{{ e.designation }}</td>

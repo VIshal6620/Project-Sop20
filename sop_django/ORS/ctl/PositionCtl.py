@@ -1,11 +1,27 @@
 from django.shortcuts import render
 from ORS.ctl.BaseCtl import BaseCtl
 from ORS.utility.DataValidator import DataValidator
+from ORS.utility.HtmlUtility import HTMLUtility
 from service.models import Position
 from service.service.PositionService import PositionService
 
 
 class PositionCtl(BaseCtl):
+
+    def preload(self, request,params):
+        self.form['condition']=request.POST.get('condition','')
+
+        if (params['id'] > 0):
+            obj = self.get_service().get(params['id'])
+            self.form['condition']=obj.condition
+
+
+        self.static_preload = {"Open":"Open","OnHold":"OnHold","Closed":"Closed"}
+
+        self.form["preload"]["condition"] = HTMLUtility.get_list_from_dict('condition',
+        self.form['condition'],
+        self.static_preload
+                                                                           )
 
     def request_to_form(self, requestForm):
         self.form['id'] = requestForm['id']

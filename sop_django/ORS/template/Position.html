@@ -60,8 +60,7 @@
                     <div class="col-lg-1"></div>
                     <label class="col-lg-3 form-control-label">Condition<span style="color: red;">*</span></label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" name="condition" value="{{form.condition}}"
-                               placeholder="Enter your Conditions">
+                       {{ form.preload.condition|safe }}
                         <span style="color: red;"> {{form.inputError.condition}} </span>
 
                     </div>
