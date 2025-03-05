@@ -1,4 +1,3 @@
-
 from .BaseCtl import BaseCtl
 from django.shortcuts import render, redirect
 from ORS.utility.DataValidator import DataValidator
