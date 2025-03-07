@@ -525,3 +525,6 @@ class Position(models.Model):
 
     class Meta:
         db_table = 'sos_Position'
+
+
+

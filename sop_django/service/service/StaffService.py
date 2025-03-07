@@ -12,7 +12,7 @@ class StaffService(BaseService):
         sql = 'select * from sos_Staff where 1=1'
         val = params.get('fullName', None)
         if (DataValidator.isNotNull(val)):
-            sql += " and fullName = '" + val + "' "
+            sql += " and fullName like '" + val + "%%'"
         sql += " limit %s,%s"
         cursor = connection.cursor()
         print("------------>", sql, pageNo, self.pageSize)

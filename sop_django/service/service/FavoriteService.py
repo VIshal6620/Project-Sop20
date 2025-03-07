@@ -12,7 +12,7 @@ class FavoriteService(BaseService):
         sql = 'select * from sos_favorite where 1=1'
         val = params.get('product', None)
         if (DataValidator.isNotNull(val)):
-            sql += " and product = '" + val + "' "
+            sql += " and product like '" + val + "%%'"
         sql += " limit %s,%s"
         cursor = connection.cursor()
         print("------------>", sql, pageNo, self.pageSize)

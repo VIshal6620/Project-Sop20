@@ -12,7 +12,7 @@ class PositionService(BaseService):
         sql = 'select * from sos_Position where 1=1'
         val = params.get('designation', None)
         if (DataValidator.isNotNull(val)):
-            sql += " and designation = '" + val + "' "
+            sql += " and designation like '" + val + "%%'"
         sql += " limit %s,%s"
         cursor = connection.cursor()
         print("------------>", sql, pageNo, self.pageSize)
