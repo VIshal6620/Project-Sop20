@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+SESSION_SERIALIZER = "django.contrib.sessions.serializers.PickleSerializer"
 
 
 
@@ -118,7 +118,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'vishalvish7099@gmail.com'
-EMAIL_HOST_PASSWORD = 'nucrzqkfdqhodwkb'
+EMAIL_HOST_PASSWORD = 'arak ljpq hjtj ctem'
 
 
 # Password validation
