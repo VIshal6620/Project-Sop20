@@ -13,6 +13,7 @@ class UserListCtl(BaseCtl):
         self.form['firstName'] = requestForm.get("firstName", None)
         self.form['lastName'] = requestForm.get("lastName", None)
         self.form['login_id'] = requestForm.get("login_id", None)
+        self.form['gender'] = requestForm.get("gender",None)
         self.form['ids'] = requestForm.getlist('ids', None)
 
     def display(self, request, params={}):
@@ -27,7 +28,7 @@ class UserListCtl(BaseCtl):
         self.form['pageNo'] = UserListCtl.count
         record = self.get_service().search(self.form)
         self.page_list = record['data']
-        self.form['LastId'] = User.objects.last().id
+        # self.form['LastId'] = User.objects.last().id
         res = render(request, self.get_template(), {"pageList": self.page_list, "form": self.form})
         return res
 
