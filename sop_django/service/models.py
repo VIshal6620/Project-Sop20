@@ -198,8 +198,6 @@ class Student(models.Model):
     college_ID = models.IntegerField()
     collegeName = models.CharField(max_length=50)
 
-
-
     def to_json(self):
         data = {
             'id': self.id,
@@ -527,4 +525,12 @@ class Position(models.Model):
         db_table = 'sos_Position'
 
 
+class Item(models.Model):
+    title = models.CharField(max_length=50)
+    overview = models.CharField(max_length=25)
+    cost = models.CharField(max_length=30)
+    purchaseDate = models.DateField(max_length=15)
+    category = models.CharField(max_length=30)
 
+    class Meta:
+        db_table = 'sos_Item'

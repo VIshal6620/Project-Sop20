@@ -4,10 +4,28 @@ from django.http import HttpResponse
 from .BaseCtl import BaseCtl
 from service.models import User
 from service.service.UserService import UserService
+from ..utility.HtmlUtility import HTMLUtility
 
 
 class UserListCtl(BaseCtl):
     count = 1
+
+    def preload(self, request, params):
+
+        self.form["gender"] = request.POST.get('gender', '')
+
+        if (params['id'] > 0):
+            obj = self.get_service().get(params['id'])
+            self.form["gender"] = obj.gender
+
+        self.static_preload = {"Male": "Male", "Female": "Female"}
+
+        self.form["preload"]["gender"] = HTMLUtility.get_list_from_dict(
+            'gender',
+            self.form["gender"],
+            self.static_preload
+        )
+
 
     def request_to_form(self, requestForm):
         self.form['firstName'] = requestForm.get("firstName", None)

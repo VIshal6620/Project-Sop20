@@ -36,7 +36,8 @@ from .ctl.StaffCtl import StaffCtl
 from .ctl.StaffListCtl import StaffListCtl
 from .ctl.PositionCtl import PositionCtl
 from .ctl.PositionListCtl import PositionListCtl
-
+from .ctl.ItemCtl import ItemCtl
+from .ctl.ItemListCtl import ItemListCtl
 
 # Create your views here.
 
