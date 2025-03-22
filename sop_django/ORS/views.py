@@ -38,6 +38,8 @@ from .ctl.PositionCtl import PositionCtl
 from .ctl.PositionListCtl import PositionListCtl
 from .ctl.ItemCtl import ItemCtl
 from .ctl.ItemListCtl import ItemListCtl
+from .ctl.AttributeCtl import AttributeCtl
+from .ctl.AttributeListCtl import AttributeListCtl
 
 # Create your views here.
 

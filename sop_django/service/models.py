@@ -534,3 +534,19 @@ class Item(models.Model):
 
     class Meta:
         db_table = 'sos_Item'
+
+
+class Attribute(models.Model):
+    display = models.CharField(max_length=50)
+    dataType = models.CharField(max_length=30)
+    isActive = models.CharField(max_length=20)
+    description = models.CharField(max_length=40)
+
+    def get_key(self):
+        return (self.id)
+
+    def get_value(self):
+        return self.isActive
+
+    class Meta:
+        db_table = 'sos_Attribute'
