@@ -40,6 +40,7 @@ from .ctl.ItemCtl import ItemCtl
 from .ctl.ItemListCtl import ItemListCtl
 from .ctl.AttributeCtl import AttributeCtl
 from .ctl.AttributeListCtl import AttributeListCtl
+from .ctl.EmployeeCtl import EmployeeCtl
 
 # Create your views here.
 

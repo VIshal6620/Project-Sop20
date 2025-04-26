@@ -550,3 +550,20 @@ class Attribute(models.Model):
 
     class Meta:
         db_table = 'sos_Attribute'
+
+
+class Employee(models.Model):
+    fullName = models.CharField(max_length=50)
+    userName = models.EmailField(max_length=25)
+    password = models.CharField(max_length=15)
+    birthDate = models.DateField(max_length=20)
+    contactNumber = models.IntegerField(max_length=20)
+
+    def get_key(self):
+        return (self.id)
+
+    def get_value(self):
+        return self.userName
+
+    class Meta:
+        db_table = 'sos_Employee'
