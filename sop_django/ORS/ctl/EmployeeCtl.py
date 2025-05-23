@@ -76,7 +76,7 @@ class EmployeeCtl(BaseCtl):
             inputError['contactNumber'] = "contactNumber is Required"
             self.form['error'] = True
         else:
-            if (DataValidator.isphonecheck(self.form['contactNumber'])):
+            if (DataValidator.ismobilecheck(self.form['contactNumber'])):
                 inputError['contactNumber'] = "contactNumber is Required"
                 self.form['error'] = True
 

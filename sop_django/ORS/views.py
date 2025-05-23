@@ -41,6 +41,7 @@ from .ctl.ItemListCtl import ItemListCtl
 from .ctl.AttributeCtl import AttributeCtl
 from .ctl.AttributeListCtl import AttributeListCtl
 from .ctl.EmployeeCtl import EmployeeCtl
+from .ctl.EmployeeListctl import EmployeeListCtl
 
 # Create your views here.
 

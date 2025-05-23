@@ -61,7 +61,7 @@ class UserListCtl(BaseCtl):
     def deleteRecord(self, request, params={}):
         self.form['pageNo'] = UserListCtl.count
         if (bool(self.form['ids']) == False):
-            print("qqqqqaaaaaaaaaaaaaaaaaaaaaaaqqqq ")
+            print("qqqqqaaaaaaaaaaaaaaaaaaaaaaaqqqq")
             self.form['error'] = True
             self.form['messege'] = "Please Select at least one Checkbox"
             record = self.get_service().search(self.form)

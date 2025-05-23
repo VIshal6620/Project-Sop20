@@ -108,29 +108,3 @@ class ChangePasswordCtl(BaseCtl):
 
     def get_service(self):
         return ChangePasswordService()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
