@@ -101,8 +101,6 @@ def auth(request, page="", operation="", id=0):
         ctlName = "Login" + "Ctl()"
         ctlObj = eval(ctlName)
         res = ctlObj.execute(request, {"id": id, "operation": operation, 'out': out})
-
-
     return res
 
 

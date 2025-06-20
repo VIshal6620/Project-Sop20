@@ -1,13 +1,11 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .BaseCtl import BaseCtl
+from django.shortcuts import render
+from ORS.ctl.BaseCtl import BaseCtl
 from ORS.utility.DataValidator import DataValidator
+from ORS.utility.HtmlUtility import HTMLUtility
 from service.models import User
-from service.service.UserService import UserService
-from service.service.RoleService import RoleService
-from service.service.EmailService import EmailService
 from service.service.EmailMessege import EmailMessege
-from ..utility.HtmlUtility import HTMLUtility
+from service.service.EmailService import EmailService
+from service.service.UserService import UserService
 
 
 class RegistrationCtl(BaseCtl):
@@ -181,51 +179,3 @@ class RegistrationCtl(BaseCtl):
 
     def get_service(self):
         return UserService()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
