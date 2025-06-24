@@ -44,13 +44,13 @@
 </head>
 
 <body style="background-color:whitesmoke;background-image:url('../../static/images/list_background.png');background-repeat: no-repeat;background-size: cover;width: 100%;">
-    <h1 align="center">Role List</h1>
+    <h1 align="center">Customer List</h1>
 <form method="POST">
     <div class="container-fluid">
     <div class="form-group row">
         <div class="col-lg-5"></div>
         <div class="col-lg-2">
-            <input class="form-control" name="name" value="{{ form.name }}" placeholder="Enter Role Name">
+            <input class="form-control" name="clientName" value="{{ form.clientName }}" placeholder="Enter clientName ">
         </div>
 
         <div class="col-lg-2">
@@ -61,7 +61,7 @@
     </div>
 
 
-    <table border="1" width="50%">
+    <table borde="1" width="50%">
         <div id="timeout">
             {% if form.error %}
                 <p style="color:red;font-size:x-large;text-align: center;">{{ form.messege }}</p>
@@ -78,8 +78,10 @@
                                 onchange="selectAll(this)"> Select All
                         </th>
                         <th scope="row">S.NO.</th>
-                        <th scope="row">Role</th>
-                        <th scope="row">Description</th>
+                        <th scope="row">ClientName</th>
+                        <th scope="row">Location</th>
+                        <th scope="row">ContactNUmber</th>
+                        <th scope="row">Importance</th>
                         <th scope="row">EDIT</th>
                     </thead>
 
@@ -87,12 +89,14 @@
                         {% for e in pageList %}
                             <tr>
                                 <td><input type="checkbox" name="ids" class="checkbox"
-                                            onchange="selectone(this)" value="{{ e.id }}"
+                                            onchange="selectone(this)" value="{{ e.id }}">
                                 </td>
                                 <td>{{ form.index|add:forloop.counter0 }}</td>
-                                <td>{{ e.name }}</td>
-                                <td>{{ e.description }}</td>
-                                <td><a href="/ORS/Role/Edit/{{ e.id }}">Edit
+                                <td>{{ e.clientName }}</td>
+                                <td>{{ e.location }}</td>
+                                <td>{{ e.contactNUmber }}</td>
+                                <td>{{ e.importance }}</td>
+                                <td><a href="/ORS/Employee/edit/{{ e.id }}">Edit
                                     <font data-target="#update" data-toggle="modal" class="">
                                         <i class="fas fa-edit"></i>
                                     </font>
@@ -103,9 +107,8 @@
                 </table>
 {% if form.mesg %}
     <b style="font-size:x-large;margin-left: 550px;">{{form.mesg}}</b><br>
-    <a class="btn btn-primary" href="/ORS/RoleList/" style="margin-left:600px;">Back</a><br><br>
+    <a class="btn btn-primary" href="/ORS/CustomerList/" style="margin-left:600px;">Back</a><br><br>
 {% else %}
-
 <div class="row">
     {% if form.pageNo == 1 %}
         <div class="col-lg-1">
@@ -122,7 +125,7 @@
         <input type="submit" class="btn btn-danger" name="operation" value="Delete">
     </div>
     <div class="col-lg-2">
-        <a href="/ORS/Role/">
+        <a href="/ORS/Customer/">
             <font class="btn btn-success" data-target="##update" data-toggle="modal">ADD
                 <i class="fas fa-plus-circle"></i></font>
         </a>
@@ -141,6 +144,7 @@
 
 </div>
 {% endif %}
+
             </div>
         </div>
     </table>
