@@ -100,31 +100,3 @@ class CourseCtl(BaseCtl):
 
     def get_service(self):
         return CourseService()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

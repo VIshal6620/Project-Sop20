@@ -167,21 +167,3 @@ class TimeTableCtl(BaseCtl):
 
     def get_service(self):
         return TimeTableService()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

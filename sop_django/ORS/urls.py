@@ -9,5 +9,4 @@ urlpatterns = [
     path('<page>/<operation>/<int:id>',views.actionId),
     path('<page>/',views.actionId),
 
-
  ]
