@@ -121,5 +121,3 @@ class CollegeCtl(BaseCtl):
 
     def get_service(self):
         return CollegeService()
-
-

@@ -21,4 +21,3 @@ class WelcomeCtl(BaseCtl):
     # Service of Role
     def get_service(self):
         return "RoleService()"
-
