@@ -108,4 +108,3 @@ class UserListCtl(BaseCtl):
 
     def get_service(self):
         return UserService()
-

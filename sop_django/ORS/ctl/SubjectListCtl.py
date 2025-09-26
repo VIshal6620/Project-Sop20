@@ -86,5 +86,3 @@ class SubjectListCtl(BaseCtl):
 
     def get_service(self):
         return SubjectService()
-
-

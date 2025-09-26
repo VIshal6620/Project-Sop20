@@ -1,7 +1,5 @@
 from datetime import datetime
-
 from django.shortcuts import render
-
 from ORS.ctl.BaseCtl import BaseCtl
 from ORS.utility.DataValidator import DataValidator
 from ORS.utility.HtmlUtility import HTMLUtility

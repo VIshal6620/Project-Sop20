@@ -19,5 +19,3 @@ class HomeCtl(BaseCtl):
    # Service of Role
     def get_service(self):
         return "RoleService()"
-
-
