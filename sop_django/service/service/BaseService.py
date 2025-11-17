@@ -31,11 +31,6 @@ class BaseService (ABC):
             mobj.id = None
         mobj.save()
 
-    #
-    # def save(self,mobj):
-    #     if(mobj.id == 0):
-    #         mobj.id = None
-    #     mobj.save()
 
     def delete(self, rid):
         r = self.get(rid)
