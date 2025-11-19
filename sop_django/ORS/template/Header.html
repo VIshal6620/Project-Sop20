@@ -60,8 +60,8 @@
     }
 </style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="admin">
-    <a class="navbar-brand" href="/auth/Logout/"><img src="{% static '/images/customLogo1.png'%}"
-                                                    style="height: 40; width: 120;"></a>
+    <a class="navbar-brand" href="/auth/Logout/"><img src="{% static 'images/customLogo1.png' %}"
+                                                    style="height: 40px; width: 120px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -72,15 +72,15 @@
 
             <li class="nav-item">
                 <i class="fa fa-user"
-                   style="font-size:30px;color:white; margin-left:1050px; padding-top:15px;float: right;"></i>
+                   style="font-size:30px;color:white;"></i>
+            </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/Login/" id="navbardrop" data-toggle="dropdown"
                    style="color:whitesmoke; font: 1000;font-style: italic;font-family: bold; font-size: 20px">
                     Hi Guest
                 </a>
-                <div class="dropdown-menu" onMouseOver="this.style.backgroundColor='grey'"
-                     onMouseOut="this.style.backgroundColor='#FFAC33'" style="background-color: rgb(148, 148, 27);">
+                <div class="dropdown-menu" >
                     <a class="dropdown-item" href="/ORS/Login/"><span style="color:whitesmoke;"><i
                             class="fas fa-sign-in-alt"></i> Login</span></a>
                     <a class="dropdown-item" href="/ORS/Registration/"><span style="color:whitesmoke;"><i
@@ -88,11 +88,11 @@
                 </div>
             </li>
             {% elif request.session.name == "Admin" %}
-            </li>
+
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/User/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/User/" id="dropUser" data-toggle="dropdown">
                     <i class="fa fa-user" style="color: white;"></i>
                     User
                 </a>
@@ -104,7 +104,7 @@
             </li>
 
              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Attribute/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Attribute/" id="dropAttribute" data-toggle="dropdown">
                     <i class="fas fa-transgender-alt"></i>
                     Attribute
                 </a>
@@ -116,18 +116,18 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Employee/" id="navbardrop" data-toggle="dropdown">
-                    <i class="fas fa-heart"></i>
+                <a class="nav-link dropdown-toggle" href="/ORS/Employee/" id="dropEmployee" data-toggle="dropdown">
+                  <i class="fa fa-user"></i>
                     Employee
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/Employee/"><i class="fas fa-heart"></i> Employee</a>
+                    <a class="dropdown-item" href="/ORS/Employee/"><i class="fa fa-user"></i> Employee</a>
                     <a class="dropdown-item" href="/ORS/EmployeeList/"><i class="fas fa-list"></i> EmployeeList</a>
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Favorite/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Favorite/" id="dropFavorite" data-toggle="dropdown">
                     <i class="fas fa-heart"></i>
                     Favorite
                 </a>
@@ -138,20 +138,21 @@
                 </div>
             </li>
              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/User/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Customer/" id="dropCustomer" data-toggle="dropdown">
                     <i class="fa fa-user" style="color: white;"></i>
                     Customer
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/Customer/"> <i class="fas fa-user fa - 1x"></i>Customer</a>
+                    <a class="dropdown-item" href="/ORS/Customer/"> <i class="fas fa-user fa-1x"></i>Customer</a>
                     <a class="dropdown-item" href="/ORS/CustomerList/"><i class="fas fa-list"></i> CustomerList</a>
 
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Position/" id="navbardrop" data-toggle="dropdown">
-                    <i class="fas fa-users"></i>
+                <a class="nav-link dropdown-toggle" href="/ORS/Position/" id="dropPosition" data-toggle="dropdown">
+                    <i class="fa fa-briefcase"></i>
+
                     Position
                 </a>
                 <div class="dropdown-menu">
@@ -162,18 +163,18 @@
             </li>
 
              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/User/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Item/" id="dropItem" data-toggle="dropdown">
                     <i class="fas fa-sitemap" style="color: white;"></i>
                     Item
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/Item/"><i class="fas fa-sitemap"></i></i>Add Item</a>
+                    <a class="dropdown-item" href="/ORS/Item/"><i class="fas fa-sitemap"></i>Add Item</a>
                     <a class="dropdown-item" href="/ORS/ItemList/"><i class="fas fa-list"></i> ItemList</a>
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Staff/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Staff/" id="dropStaff" data-toggle="dropdown">
                     <i class="fas fa-users"></i>
                     Staff
                 </a>
@@ -185,7 +186,7 @@
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/College/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/College/" id="dropCollage" data-toggle="dropdown">
                     <i class="fas fa-graduation-cap" style="color: white;"></i>
                     College
                 </a>
@@ -197,7 +198,7 @@
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/CourseList/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Course/" id="dropCourse" data-toggle="dropdown">
                     <i class="fab fa-discourse" style="color:white;"></i>
                     Course
                 </a>
@@ -209,55 +210,55 @@
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Marksheet/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Marksheet/" id="dropMarksheet" data-toggle="dropdown">
                     <i class="fas fa-chart-bar" style="color:white;"></i>
                     Marksheet
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/Marksheet/"><i class="fas fa-chart-bar"></i>Marksheet</a>
-                    <a class="dropdown-item" href="/ORS/MarksheetList/"><i class="fas fa-list"></i>MarksheetList</a>
-                    <a class="dropdown-item" href="/ORS/MarksheetMeritList/"><i class="fas fa-list"></i>MarksheetMeritList</a>
+                    <a class="dropdown-item" href="/ORS/Marksheet/"><i class="fas fa-chart-bar"></i> Marksheet</a>
+                    <a class="dropdown-item" href="/ORS/MarksheetList/"><i class="fas fa-list"></i> MarksheetList</a>
+                    <a class="dropdown-item" href="/ORS/MarksheetMeritList/"><i class="fas fa-list"></i> MarksheetMeritList</a>
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Role/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Role/" id="dropRole" data-toggle="dropdown">
                     <i class="fa fa-users" style="color:white;"></i>
                     Role
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/Role/"> <i class="fa fa-users"></i>Role</a>
-                    <a class="dropdown-item" href="/ORS/RoleList/"><i class="fas fa-list"></i>RoleList</a>
+                    <a class="dropdown-item" href="/ORS/Role/"> <i class="fa fa-users"></i> Role</a>
+                    <a class="dropdown-item" href="/ORS/RoleList/"><i class="fas fa-list"></i> RoleList</a>
                 </div>
             </li>
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Student/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Student/" id="dropStudent" data-toggle="dropdown">
                     <i class="fas fa-id-badge" style="color:white;"></i>
                     Student
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/Student/"><i class="fas fa-id-badge"></i>Student</a>
-                    <a class="dropdown-item" href="/ORS/StudentList/"><i class="fas fa-list"></i>StudentList</a>
+                    <a class="dropdown-item" href="/ORS/Student/"><i class="fas fa-id-badge"></i> Student</a>
+                    <a class="dropdown-item" href="/ORS/StudentList/"><i class="fas fa-list"></i> StudentList</a>
                 </div>
             </li>
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/Subject/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/Subject/" id="dropSubject" data-toggle="dropdown">
                     <i class="fas fa-folder-open" style="color: white;"></i>
                     Subject
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/Subject/"><i class="fas fa-folder-open"></i>Subject</a>
-                    <a class="dropdown-item" href="/ORS/SubjectList/"><i class="fas fa-list"></i>SubjectList</a>
+                    <a class="dropdown-item" href="/ORS/Subject/"><i class="fas fa-folder-open"></i> Subject</a>
+                    <a class="dropdown-item" href="/ORS/SubjectList/"><i class="fas fa-list"></i> SubjectList</a>
                 </div>
             </li>
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/AddFaculty/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/AddFaculty/" id="dropAddFaculty" data-toggle="dropdown">
                     <i class="fas fa-male" style="color: white;"></i>
                     AddFaculty
                 </a>
@@ -269,26 +270,26 @@
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/TimeTable/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/TimeTable/" id="dropTimeTable" data-toggle="dropdown">
                     <i class="fas fa-table" style="color: white;"></i>
                     TimeTable
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/TimeTable/"><i class="fas fa-table"></i>TimeTable</a>
-                    <a class="dropdown-item" href="/ORS/TimeTableList/"><i class="fas fa-list"></i>TimeTableList</a>
-
+                    <a class="dropdown-item" href="/ORS/TimeTable/"><i class="fas fa-table"></i> TimeTable</a>
+                    <a class="dropdown-item" href="/ORS/TimeTableList/"><i class="fas fa-list"></i> TimeTableList</a>
                 </div>
+            </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ORS/ChangePassword/" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/ORS/ChangePassword/" id="dropChangePassword" data-toggle="dropdown">
                     <i class="fas fa-info-circle" style="color:white;"></i>
 
                     About
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/ORS/ChangePassword/"><i class="fas fa-key"></i>ChangePassword</a>
-                    <a class="dropdown-item" href="/auth/Logout/"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
-                    <a class="dropdown-item" href="/ORS/MyProfile/"><i class="fas fa-user-circle"></i>MyProfile</a>
+                    <a class="dropdown-item" href="/ORS/ChangePassword/"><i class="fas fa-key"></i> ChangePassword</a>
+                    <a class="dropdown-item" href="/auth/Logout/"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
+                    <a class="dropdown-item" href="/ORS/MyProfile/"><i class="fas fa-user-circle"></i> MyProfile</a>
 
                 </div>
             </li>
@@ -297,10 +298,8 @@
                 <h6 style="color:cyan;font-style: bold;" class="nav-link"> {{request.session.user.firstName}}
                     {{request.session.user.lastName}}-(Admin)</h6>
             </li>
-            <li class="nav-item">
-                <h6 style="color:yellow;" class="nav-link"></h6>
-            </li>
             {% elif request.session.name == "Student" %}
+
             <li class="nav-item">
                 <a class="nav-link" href="/ORS/User/">Profile Update</a>
             </li>
@@ -345,13 +344,11 @@
             </li>
 
 
-            </li>
-
-
             {% elif request.session.name == "Faculty" %}
             <li class="nav-item">
                 <a class="nav-link" href="/ORS/User/">Profile Update</a>
             </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/College/" id="navbardrop" data-toggle="dropdown">
                     College
@@ -442,6 +439,9 @@
                     <a class="dropdown-item" href="/ORS/TimeTableList/">TimeTableList</a>
 
                 </div>
+            </li>
+
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/ChangePassword/" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-info-circle" style="color:white;"></i>
@@ -453,9 +453,9 @@
                     <a class="dropdown-item" href="/auth/Logout/"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
                     <a class="dropdown-item" href="/ORS/MyProfile/"><i class="fas fa-user-circle"></i>MyProfile</a>
                 </div>
-
-
             </li>
+
+
             <li class="nav-item">
                 <h6 style="color:red;font-style: bold;" class="nav-link"> {{request.session.name}}</h6>
             </li>
@@ -474,6 +474,8 @@
 
                 </div>
             </li>
+
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/CourseList/" id="navbardrop" data-toggle="dropdown">
                     Course
@@ -541,9 +543,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/AddFaculty/">AddFaculty</a>
                     <a class="dropdown-item" href="/ORS/AddFacultyList/">AddFacultyList</a>
-
                 </div>
             </li>
+
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/TimeTable/" id="navbardrop" data-toggle="dropdown">
@@ -552,20 +554,22 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/TimeTable/">TimeTable</a>
                     <a class="dropdown-item" href="/ORS/TimeTableList/">TimeTableList</a>
-
                 </div>
+            </li>
+
+
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/ChangePassword/" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-info-circle" style="color:white;"></i>
-
                     About
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/ChangePassword/"><i class="fas fa-key"></i>ChangePassword</a>
                     <a class="dropdown-item" href="/auth/Logout/"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
                     <a class="dropdown-item" href="/ORS/MyProfile/"><i class="fas fa-user-circle"></i>MyProfile</a>
-
                 </div>
+            </li>
 
 
             <li class="nav-item">
