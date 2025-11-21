@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'ORS',
     'service',
     'ORSAPI',
-    # 'django_extensions',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
