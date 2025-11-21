@@ -75,8 +75,6 @@
                    style="font-size:30px;color:white;"></i>
             </li>
 
-
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/Login/" id="navbardrop" data-toggle="dropdown"
                    style="color:whitesmoke; font: 1000;font-style: italic;font-family: bold; font-size: 20px">
@@ -89,8 +87,6 @@
                             class="fas fa-user-plus"></i> Registration</span></a>
                 </div>
             </li>
-
-
             {% elif request.session.name == "Admin" %}
 
 
@@ -103,10 +99,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/User/"><i class="fa fa-user"></i>User</a>
                     <a class="dropdown-item" href="/ORS/UserList/"><i class="fas fa-list"></i> UserList</a>
+
                 </div>
             </li>
-
-
 
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/Attribute/" id="dropAttribute" data-toggle="dropdown">
@@ -116,9 +111,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Attribute/"><i class="fas fa-transgender-alt"></i>Attribute</a>
                     <a class="dropdown-item" href="/ORS/AttributeList/"><i class="fas fa-list"></i> AttributeList</a>
+
                 </div>
             </li>
-
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/Employee/" id="dropEmployee" data-toggle="dropdown">
@@ -130,7 +125,6 @@
                     <a class="dropdown-item" href="/ORS/EmployeeList/"><i class="fas fa-list"></i> EmployeeList</a>
                 </div>
             </li>
-
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/Favorite/" id="dropFavorite" data-toggle="dropdown">
@@ -227,7 +221,6 @@
                 </div>
             </li>
 
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/Role/" id="dropRole" data-toggle="dropdown">
                     <i class="fa fa-users" style="color:white;"></i>
@@ -297,10 +290,9 @@
                     <a class="dropdown-item" href="/ORS/ChangePassword/"><i class="fas fa-key"></i> ChangePassword</a>
                     <a class="dropdown-item" href="/auth/Logout/"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
                     <a class="dropdown-item" href="/ORS/MyProfile/"><i class="fas fa-user-circle"></i> MyProfile</a>
+
                 </div>
             </li>
-
-
 
             <li class="nav-item">
                 <h6 style="color:cyan;font-style: bold;" class="nav-link"> {{request.session.user.firstName}}
@@ -332,7 +324,6 @@
             </li>
 
 
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/ChangePassword/" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-info-circle" style="color:white;"></i>
@@ -343,9 +334,10 @@
                     <a class="dropdown-item" href="/ORS/ChangePassword/"><i class="fas fa-key"></i>ChangePassword</a>
                     <a class="dropdown-item" href="/auth/Logout/"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
                     <a class="dropdown-item" href="/ORS/MyProfile/"><i class="fas fa-user-circle"></i>MyProfile</a>
-                </div>
-            </li>
 
+                </div>
+
+            </li>
 
             <li class="nav-item">
                 <h6 style="color:red;font-style: bold;" class="nav-link"> {{request.session.name}}</h6>
@@ -353,13 +345,9 @@
 
 
             {% elif request.session.name == "Faculty" %}
-
-
             <li class="nav-item">
                 <a class="nav-link" href="/ORS/User/">Profile Update</a>
             </li>
-
-
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/College/" id="navbardrop" data-toggle="dropdown">
@@ -368,11 +356,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/College/">College</a>
                     <a class="dropdown-item" href="/ORS/CollegeList/">CollegeList</a>
+
                 </div>
             </li>
-
-
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/CourseList/" id="navbardrop" data-toggle="dropdown">
                     Course
@@ -380,6 +366,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Course/">Course</a>
                     <a class="dropdown-item" href="/ORS/CourseList/">CourseList</a>
+
                 </div>
             </li>
 
@@ -392,6 +379,7 @@
                     <a class="dropdown-item" href="/ORS/Marksheet/">Marksheet</a>
                     <a class="dropdown-item" href="/ORS/MarksheetList/">MarksheetList</a>
                     <a class="dropdown-item" href="/ORS/MarksheetMeritList/">MarksheetMeritList</a>
+
                 </div>
             </li>
 
@@ -403,6 +391,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Role/">Role</a>
                     <a class="dropdown-item" href="/ORS/RoleList/">RoleList</a>
+
                 </div>
             </li>
 
@@ -414,6 +403,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Student/">Student</a>
                     <a class="dropdown-item" href="/ORS/StudentList/">StudentList</a>
+
                 </div>
             </li>
 
@@ -425,9 +415,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Subject/">Subject</a>
                     <a class="dropdown-item" href="/ORS/SubjectList/">SubjectList</a>
+
                 </div>
             </li>
-
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/AddFaculty/" id="navbardrop" data-toggle="dropdown">
@@ -436,10 +426,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/AddFaculty/">AddFaculty</a>
                     <a class="dropdown-item" href="/ORS/AddFacultyList/">AddFacultyList</a>
+
                 </div>
             </li>
-
-
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/TimeTable/" id="navbardrop" data-toggle="dropdown">
@@ -448,6 +437,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/TimeTable/">TimeTable</a>
                     <a class="dropdown-item" href="/ORS/TimeTableList/">TimeTableList</a>
+
                 </div>
             </li>
 
@@ -455,6 +445,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/ChangePassword/" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-info-circle" style="color:white;"></i>
+
                     About
                 </a>
                 <div class="dropdown-menu">
@@ -468,16 +459,11 @@
             <li class="nav-item">
                 <h6 style="color:red;font-style: bold;" class="nav-link"> {{request.session.name}}</h6>
             </li>
-
 
             {% elif request.session.name == "Kiosk" %}
-
-
             <li class="nav-item">
                 <a class="nav-link" href="/ORS/User/">Profile Update</a>
             </li>
-
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/College/" id="navbardrop" data-toggle="dropdown">
                     College
@@ -485,6 +471,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/College/">College</a>
                     <a class="dropdown-item" href="/ORS/CollegeList/">CollegeList</a>
+
                 </div>
             </li>
 
@@ -496,9 +483,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Course/">Course</a>
                     <a class="dropdown-item" href="/ORS/CourseList/">CourseList</a>
+
                 </div>
             </li>
-
 
 
             <li class="nav-item dropdown">
@@ -509,9 +496,9 @@
                     <a class="dropdown-item" href="/ORS/Marksheet/">Marksheet</a>
                     <a class="dropdown-item" href="/ORS/MarksheetList/">MarksheetList</a>
                     <a class="dropdown-item" href="/ORS/MarksheetMeritList/">MarksheetMeritList</a>
+
                 </div>
             </li>
-
 
 
             <li class="nav-item dropdown">
@@ -521,9 +508,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Role/">Role</a>
                     <a class="dropdown-item" href="/ORS/RoleList/">RoleList</a>
+
                 </div>
             </li>
-
 
 
             <li class="nav-item dropdown">
@@ -533,9 +520,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Student/">Student</a>
                     <a class="dropdown-item" href="/ORS/StudentList/">StudentList</a>
+
                 </div>
             </li>
-
 
 
             <li class="nav-item dropdown">
@@ -545,9 +532,9 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/ORS/Subject/">Subject</a>
                     <a class="dropdown-item" href="/ORS/SubjectList/">SubjectList</a>
+
                 </div>
             </li>
-
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/ORS/AddFaculty/" id="navbardrop" data-toggle="dropdown">
@@ -558,7 +545,6 @@
                     <a class="dropdown-item" href="/ORS/AddFacultyList/">AddFacultyList</a>
                 </div>
             </li>
-
 
 
             <li class="nav-item dropdown">
@@ -586,16 +572,14 @@
             </li>
 
 
-
             <li class="nav-item">
                 <h6 style="color:red;font-style: bold;" class="nav-link"> {{request.session.name}}</h6>
             </li>
 
+            </li>
 
 
             {% endif%}
-
-
         </ul>
 
     </div>
