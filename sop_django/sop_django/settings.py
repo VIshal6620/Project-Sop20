@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-m@@=#9no8$#%bvbkcfl6_c6htww1&(6x%rmet5thwt=-bcm8_d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.1.104', 'localhost', '127.0.0.1']
+
 
 SESSION_SERIALIZER = "django.contrib.sessions.serializers.PickleSerializer"
 
